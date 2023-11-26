@@ -15,7 +15,7 @@ const StockTable = () => {
                         {/* Add more columns as needed */}
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody> </tbody>
             </table>
         </div>
     );
