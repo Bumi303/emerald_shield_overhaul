@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const YourComponent = () => {
+    const [value, setValue] = useState('');
+
     useEffect(() => {
         // Replace 'https://your-api-gateway-url/your-endpoint' with your actual API Gateway URL
-        const apiUrl = 'https://your-api-gateway-url/your-endpoint';
+        const apiUrl =
+            'https://ayw2cvofqgm42e2tvbgojikxme0itvtz.lambda-url.us-east-1.on.aws/';
 
         // Make a GET request to the API Gateway endpoint
         fetch(apiUrl)
@@ -19,6 +22,7 @@ const YourComponent = () => {
             .then((data) => {
                 // Handle the response data
                 console.log(data);
+                setValue(data);
             })
             .catch((error) => {
                 // Handle errors
@@ -27,7 +31,11 @@ const YourComponent = () => {
     }, []); // The empty array means this effect runs once after the initial render
 
     // Your component's rendering logic goes here
-    return <div>{/* Render your component content here */}</div>;
+    return (
+        <div>
+            {value.symbol} {value.latest_price}
+        </div>
+    );
 };
 
 export default YourComponent;
