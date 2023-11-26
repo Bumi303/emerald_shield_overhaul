@@ -33,7 +33,7 @@ const YourComponent = () => {
     // Your component's rendering logic goes here
     return (
         <div>
-            {value.symbol} {value.latest_price}
+            {value.symbol} {value.latest_price} {value.latest_timestamp}
         </div>
     );
 };
